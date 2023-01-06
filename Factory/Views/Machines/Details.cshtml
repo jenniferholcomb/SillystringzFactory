@@ -3,11 +3,28 @@
 }
 
 @model Factory.Models.Machine;
+@using Factory.Models;
 
 <h3>Machine Details</h3>
 <hr>
 
 <h5>Machine name: @Html.DisplayFor(model => model.Type)</h5>
+
+@if (Model.JoinEntities.Count == 0)
+{
+  <p>There are no engineers assigned to this machine.</p>
+}
+else
+{
+  <h5>Engineers:</h5>
+  <ul>
+  @foreach(EngineerMachine join in Model.JoinEntities)
+  {
+    <li>@join.Engineer.Name</li>
+  }
+  </ul>
+}
+
 
 <hr>
 <p>

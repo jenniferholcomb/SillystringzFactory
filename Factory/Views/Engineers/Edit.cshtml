@@ -16,6 +16,10 @@
     <input type="submit" value="Update" />
   </p>
 }
+
+<hr>
+
+@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })<br>
 @Html.ActionLink("Back to Engineer Details", "Details", new { id = Model.EngineerId })<br>
 @Html.ActionLink("Back to Engineers List", "Index")<br>
 @Html.ActionLink("Return Home", "Index", "Home")

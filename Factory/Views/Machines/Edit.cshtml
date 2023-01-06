@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<h3>Edit Machine,</h3>
+
+@using (@Html.BeginForm())
+{
+  <p>
+    Machine: @Html.TextBoxFor(model => model.Type)
+
+    <input type="submit" value="Update" />
+  </p>
+}
+@Html.ActionLink("Back to Machine Details", "Details", new { id = Model.MachineId })<br>
+@Html.ActionLink("Back to Machines List", "Index")<br>
+@Html.ActionLink("Return Home", "Index", "Home")

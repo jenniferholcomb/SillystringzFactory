@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<h3>Machine Details</h3>
+<hr>
+
+<h5>Machine name: @Html.DisplayFor(model => model.Type)</h5>
+
+<hr>
+<p>
+@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })<br>
+@Html.ActionLink("Back to Machines List", "Index")<br>
+@Html.ActionLink("Return Home", "Index", "Home")
+</p>

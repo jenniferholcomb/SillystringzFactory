@@ -7,7 +7,8 @@ namespace Factory.Models
   {
     public int EngineerId { get; set; }
     [Required(ErrorMessage="Name must be added for new Engineer.")]
-    [Range]
+    [StringLength(60,ErrorMessage="No more than 60 characters")]
+    [Display(Name="Engineer Name")]
     public string Name { get; set; }
     public List<EngineerMachine> JoinEntities { get; }
   }

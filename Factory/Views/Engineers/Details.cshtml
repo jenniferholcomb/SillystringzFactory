@@ -16,11 +16,11 @@
 }
 else
 {
-  <h5>Machines:</h5>
+  <h5>Machine icenses for repair:</h5>
   <ul>
   @foreach(EngineerMachine join in Model.JoinEntities)
   {
-    <li>@join.Machine.Type</li>
+    <li>@Html.ActionLink($"{@join.Machine.Type}", "Details", "Machines", new { id = join.Machine.MachineId })</li>
   }
   </ul>
 

@@ -8,8 +8,10 @@
 
 @using (@Html.BeginForm())
 {
+  @Html.HiddenFor(model => model.MachineId)
+  
   <p>
-    Machine: @Html.TextBoxFor(model => model.Type)
+    Machine: @Html.EditorFor(model => model.Type)
 
     <input type="submit" value="Update" />
   </p>

@@ -84,7 +84,6 @@ namespace Factory.Controllers
     {
       Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
-      ViewBag.Engineer = _db.Engineers;
       return View(thisMachine);
     }
 

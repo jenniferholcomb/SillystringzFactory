@@ -4,14 +4,16 @@
 
 @model Factory.Models.Machine
 @using Factory.Models
+@using System.Linq
 
 <h3>Add Engineer</h3>
 
-<h5>Add an engineer to @Html.DisplayFor(model => model.Type)</h5>
+<h5>Repair to @Html.DisplayFor(model => model.Type):</h5>
 
-@if (@Engineers.Count == 0)
+@if (!Enumerable.Any(ViewBag.EngineerId))
 {
-  <p><em>-- there are no engineers to add --</em></p>
+  <p><em>-- you have no engineers entered in this system --</em><br>
+  <em>-- enter an engineer, then you can add repair to machine --</em></p>
 }
 else
 {

@@ -24,6 +24,7 @@ else
     @using (Html.BeginForm("DeleteJoin", "Machines"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)
+      @Html.Hidden("id", @Model.EngineerId)
       <input type="submit" value="Remove License" />
     }
   }

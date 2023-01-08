@@ -11,6 +11,7 @@ namespace Factory.Models
     [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Name must only include characters.")]
     [Display(Name="Engineer Name")]
     public string Name { get; set; }
+    public string Status { get; set; } = "Idle";
     public List<EngineerMachine> JoinEntities { get; }
   }
 }

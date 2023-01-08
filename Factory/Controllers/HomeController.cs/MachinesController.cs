@@ -58,8 +58,9 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Machine machine)
+    public ActionResult Edit(Machine machine, string status)
     {
+      machine.Status = status;
       _db.Machines.Update(machine);
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = machine.MachineId });

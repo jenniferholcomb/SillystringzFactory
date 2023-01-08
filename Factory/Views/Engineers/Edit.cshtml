@@ -12,6 +12,11 @@
 
   <p>
     Engineer: @Html.EditorFor(model => model.Name)
+    @Html.DropDownList("Status", new List<SelectListItem>
+    {
+      new SelectListItem{ Text="Idle", Value="Idle" },
+      new SelectListItem{ Text="Active", Value="Active"}
+    })
 
     <input type="submit" value="Update" />
   </p>

@@ -4,7 +4,7 @@
 
 @using Factory.Models
 
-<h1>Welcome, Dr. Sillstringz.</h1> 
+<h1>Welcome, Dr. Sillystringz.</h1> 
 <h3>How would you like to proceed today?</h3>
 
 <hr>
@@ -20,7 +20,7 @@
 <ul>
   @foreach(Machine machine in Model["machines"])
   {
-    <li>@Html.ActionLink(@machine.Type, "Details", "Machines", new { id = @machine.MachineId })</li>
+    <li>@Html.ActionLink(@machine.Type, "Details", "Machines", new { id = @machine.MachineId }) | @machine.Status</li>
   }
 </ul>
 
@@ -32,6 +32,6 @@
 <ul>
   @foreach(Engineer engineer in Model["engineers"])
   {
-    <li>@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId })</li>
+    <li>@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId }) | @engineer.Status</li>
   }
 </ul>

@@ -11,7 +11,14 @@
   @Html.HiddenFor(model => model.MachineId)
 
   <p>
-    Machine: @Html.EditorFor(model => model.Type)
+    @Html.DisplayNameFor(model => model.Type): @Html.EditorFor(model => model.Type)
+    @Html.DropDownList("Status", new List<SelectListItem>
+    {
+      new SelectListItem{ Text="Operational", Value="Operational" },
+      new SelectListItem{ Text="Malfunctioning", Value="Malfunctioning"},
+      new SelectListItem{ Text="Maintenance", Value="Maintenance"}
+    })
+    @Html.DisplayNameFor(model => model.Service): @Html.EditorFor(model => model.Service)
 
     <input type="submit" value="Update" />
   </p>

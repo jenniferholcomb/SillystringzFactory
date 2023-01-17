@@ -2,45 +2,45 @@
 
 #### By Jennifer Holcomb
 
-#### An application for factory manager to manage engineers, and the machines they are licensed to fix. (fictitious)
+#### An application for factory manager to manage engineers, and the machines they are licensed to repair. (fictitious)
 
 ## Technologies Used
 
 * C#
-* .Net 6
-* ASP.Net Core 6 MVC
+* .NET 6
+* ASP.NET Core 6 MVC
 * EF Core 6
 * SQL
 * mySQL
-* mySQL Workbench
 * LINQ
+* Dotnet-ef
 
 ## Description
 
-
-
-
-
-
-![Screenshot of Databases](HairSalon/wwwroot/images/db_hair_salon.png)
-
+This application keeps track of factory machines, their status (operational or malfunctioning), the engineers working at the factory, what machines they are licensed to repair (as well as a list of engineers licensed to repair each machine), and whether the engineer is idle or currently working on a repair. There is CRUD capability for both machine and engineer.
 
 ## Setup/Installation Requirements
 
 * Clone this repo to your workspace.
-* Open MySqlWorkbench [Click here for instructions to download]
-  * Under Admin Tab, select Data Import/Restore
-    * Select 'Import from Self Contained File'
-    * Select SQL_DUMP_FILENAME
-    * Change Default Target Schema to 'DB_NAME'
-    * Click 'Start Import'
-* In root directoy of project, create file 'appsettings.json'
-  * add the Default Connection settings
-  * chan 
-* Navigate to program directory ``` $ cd HairSalon ```
-* Navigate to PROJECT_NAME folder & run ```$ dotnet restore ```
-* To build & run program in development mode ``` $ dotnet run ```
-* To build & run program in production mode ``` dotnet run --launch-profile "production" ```
+* Navigate to program directory  (Factory.Solution)
+  * add .gitignore file to this directory
+    * add bin, obj, appsettings.json to file
+    * push this file to GitHub first
+* Navigate to production directory (Factory)
+  * Create a file appsettings.json
+    * Add the following to appsettings.json,
+    {
+      "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Port=3306;database=factory;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+      }
+    }
+    * In appsettings.json, replace '[YOUR-USERNAME-HERE]' with your SQL username, and '[YOUR-PASSWORD-HERE]' with your SQL password
+* In production directory, on command line run $ dotnet restore.
+* To load application database with migrations, in production directory,
+  run $ dotnet ef database update.
+* In prooduction directory, run $ dotnet watch run in command line to  
+  start project in development mode in watcher.
+* Open brower to https://localhost:5001
 
 
 ## Known Bugs
@@ -53,7 +53,7 @@
 
 MIT License
 
-Copyright (c) 2022 Jennifer Holcomb
+Copyright (c) 2023 Jennifer Holcomb
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
